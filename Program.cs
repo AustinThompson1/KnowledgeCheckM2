@@ -12,14 +12,11 @@ namespace KnowledgeCheckM2
             List<string> crimeList = new List<string>();
             for (int i = 0; i < numberOfRecords; i++)
             {
-                // In this loop, populate the object's properties using Console.ReadLine()
-                var PoliceRecord = new PoliceRecord();
 
-                //Console.WriteLine("Enter the value for Id ");
-                //PoliceRecord.Id = int.Parse(Console.ReadLine());
+                var PoliceRecord = new PoliceRecord();
                 PoliceRecord.Id = i;
-                Console.WriteLine($"Id = {i}");
-                Console.WriteLine("Enter the value for Name");
+
+                Console.WriteLine($"\nId = {i} Enter the value for Name");
                 PoliceRecord.Name = Console.ReadLine();
                 Console.WriteLine("Enter crimes comitted with a comma to separate each crime");
                 String crimes = Console.ReadLine();
@@ -29,13 +26,13 @@ namespace KnowledgeCheckM2
                     Console.Write($"{a} was added\n");
                     crimeList.Add(a);
                 }
-                recordList.Add(PoliceRecord);
-                Console.WriteLine("PoliceRecord was added.");
-                Console.WriteLine("These are the current records... ");
-                Console.ReadLine();
 
-                List<PoliceRecord> records = PrintRecordList();
-                foreach (var item in records)
+                recordList.Add(PoliceRecord);
+
+                Console.WriteLine("PoliceRecord was added.\n");
+                Console.WriteLine("These are the current records... ");
+
+                foreach (var item in recordList)
                 {
                     Console.WriteLine(item.Name);
                 }
@@ -43,10 +40,6 @@ namespace KnowledgeCheckM2
 
             }
 
-        }
-        public static List<PoliceRecord> PrintRecordList()
-        {
-            return recordList;
         }
     }
 
